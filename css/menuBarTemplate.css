@@ -1,0 +1,22 @@
+.menuBar {
+    height:100%;
+    width:100%;
+    background-color: #497495;
+}
+
+.menuBar .logo {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.menuBar .title {
+    line-height: 14px;
+    color:white;
+    font-weight: 800;
+    position: absolute;
+    left:50px;
+    top:13px;
+}

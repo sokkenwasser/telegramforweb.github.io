@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html id="htmlTop" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html id="mainViewModel" class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mainViewModel.css">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -21,15 +22,22 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <table>
-			<tr>
-				<td>First Name</td>
-				<td><input type="text" data-bind="value: test, valueUpdate:'afterkeydown'"/></td>
-			</tr>
-		</table>
-		<h2>Hello, <span data-bind="text: test"> </span>!</h2>
-		
-		
+        <table class="mainViewModel">
+            <tr>
+                <td class="menuBarContainer" colspan="2">
+                    <div style="height:100%; width: 100%;" data-bind="template: { name: 'menu-bar-template'}"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="chatListContainer">
+                    <div style="height:100%; width: 100%;" data-bind="template: { name: 'chat-list-template'}"></div>
+                </td>
+                <td class="contentContainer">
+                    <div style="height:100%; width: 100%;" data-bind="template: { name: 'content-template'}"></div>
+                </td>
+            </tr>
+        </table>
+        
         <script src="js/plugins.js"></script>
         <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script src="js/vendor/knockout-3.0.0.js"></script>
@@ -39,7 +47,7 @@
 		<script>
 			$(function(){
 			   var viewModel = new mainViewModel();
-			   ko.applyBindings(viewModel, document.getElementById("htmlTop"));
+			   ko.applyBindings(viewModel, document.getElementById("mainViewModel"));
 			});
 		</script>
 	
@@ -54,3 +62,30 @@
         </script>
     </body>
 </html>
+
+<script type="text/html" id="menu-bar-template">
+    <link rel="stylesheet" href="css/menuBarTemplate.css">
+    <div class="menuBar">
+        <img src="img/notification.png" class="logo">
+        <span class="title">Telegram</span>
+    </div>
+</script>
+
+<script type="text/html" id="chat-list-template">
+    <link rel="stylesheet" href="css/chatListTemplate.css">
+    <div class="chatList">
+    </div>
+</script>
+
+<script type="text/html" id="content-template">
+    <link rel="stylesheet" href="css/contentTemplate.css">
+    <div class="content">
+	<!--<table>
+		<tr>
+			<td>First Name</td>
+			<td><input type="text" data-bind="value: test, valueUpdate:'afterkeydown'"/></td>
+		</tr>
+	</table>
+	<h2>Hello, <span data-bind="text: test"> </span>!</h2>-->
+    </div>
+</script>

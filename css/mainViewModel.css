@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.mainViewModel {
+    height: 100%;
+    width: 100%;
+}
+
+.menuBarContainer {
+    padding: 0;
+    height: 40px;
+}
+
+.chatListContainer {
+    padding: 0;
+    width: 300px;
+}
+
+.contentContainer {
+    padding: 0;
+}
