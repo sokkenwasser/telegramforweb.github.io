@@ -1,0 +1,10 @@
+.chatWindow {
+	text-align:center;
+    display:inline-block;
+    height:400px;
+    width:300px;
+    background-color: white;
+    float:left;
+	border-radius:10px;
+    margin: 20px 0px 10px 20px;
+}

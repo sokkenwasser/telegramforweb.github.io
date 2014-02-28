@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title data-bind="text: test"></title>
+		<title> Telegram for web</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -80,6 +80,10 @@
 <script type="text/html" id="content-template">
     <link rel="stylesheet" href="css/contentTemplate.css">
     <div class="content">
+        <span data-bind="template: { name: 'chat-window-template'}"></span>
+        <span data-bind="template: { name: 'chat-window-template'}"></span>
+        <span data-bind="template: { name: 'chat-window-template'}"></span>
+        <span data-bind="template: { name: 'chat-window-template'}"></span>
 	<!--<table>
 		<tr>
 			<td>First Name</td>
@@ -87,5 +91,12 @@
 		</tr>
 	</table>
 	<h2>Hello, <span data-bind="text: test"> </span>!</h2>-->
+    </div>
+</script>
+
+<script type="text/html" id="chat-window-template">
+    <link rel="stylesheet" href="css/chatWindowTemplate.css">
+    <div class="chatWindow">
+    chat window
     </div>
 </script>
